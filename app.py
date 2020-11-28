@@ -24,6 +24,8 @@ def predict():
     int_features = [float(x) for x in request.form.values()]
     final_features = [np.array(int_features)]
 
+    # Additional pre-processing would occur here"
+
     prediction_encoded = model.predict(final_features)
     prediction = prediction_labels[prediction_encoded[0]]
    
