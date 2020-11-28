@@ -28,8 +28,8 @@ def predict():
     prediction = prediction_labels[prediction_encoded[0]]
    
 
-
-    return render_template('index.html', prediction_text='Iris Flower type is  :  {}'.format(prediction))
+    prediction_text = f'Iris Flower type is predicted to be:  {prediction}'
+    return render_template('index.html', prediction_text = prediction_text)
 
 if __name__ == "__main__":
     app.run(debug=True)
