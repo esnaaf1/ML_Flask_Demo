@@ -8,7 +8,7 @@ This demonstration intended to show how to integrate a Machine Learning Model wi
 ### Please clone this repository to your computer and then do the following:
 
 1. Navigate to the folder that contains ``app.py`` and launch a GitBash (Windows) or  Terminal (Mac).
-2. Type ``source activate PytonML`` and then hit ENTER.
+2. Type ``source activate PythonML`` and then hit ENTER.
 3. Type ``python app.py`` and then hit ENTER.
 4. Notice that Flask server starts and tells you which port it is running on.  Don't close this window
 5. Enter the following addrress in your Chrome browser:   http://127.0.0.1:5000/
