@@ -29,4 +29,7 @@ I used RandomForest classifier model for this example; however any classifier ca
 
 * Please be sure to follow the same directory structure
 * You can replace RandomForests with your own model in the ``mlmodel.py``
-* In the Iris example, I don't have any pre-processing of the input data, but you might need to do that. 
+* In the Iris example, I don't have any pre-processing of the input data, but you might need to do that for your dataset
+* There are several options to save and load the model.  In this example, I used the joblib library.  Note that joblib library was used in the Machine Learning homework.
+
+
