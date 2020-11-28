@@ -1,11 +1,14 @@
 #import libraries
 import numpy as np
 from flask import Flask, request, jsonify, render_template
-import pickle
+import joblib
 
 #Initialize the flask App
 app = Flask(__name__)
-model = pickle.load(open('model.pkl', 'rb'))
+app.config['SEND_FILE_MAX_AGE_DEFAULT'] =0
+
+# Load the model
+model = joblib.load('model.sav')
 
 #default page of our web-app
 @app.route('/')
@@ -24,13 +27,15 @@ def predict():
     int_features = [float(x) for x in request.form.values()]
     final_features = [np.array(int_features)]
 
-    # Additional pre-processing would occur here"
+    # **** Additional pre-processing would occur here ****"  
+    
 
+    # make a prediction
     prediction_encoded = model.predict(final_features)
     prediction = prediction_labels[prediction_encoded[0]]
    
 
-    prediction_text = f'Iris Flower type is predicted to be:  {prediction}'
+    prediction_text = f'Iris flower type is predicted to be :  {prediction}'
     return render_template('index.html', prediction_text = prediction_text)
 
 if __name__ == "__main__":
