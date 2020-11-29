@@ -12,7 +12,8 @@
   <h1> Predict Iris Flower Type</h1>
     <h3> Enter the following values to predict the Iris type</h3>
 
-    <!-- Input section using form and post method -->
+    <!-- Input section using a form and the Hypertext Transfer Protocol (HTTP) POST method -->
+    <!-- Pass the form input using 'url_for'.  Please be sure that the argument matches the route method in app.py -->
     <form action ="{{url_for('predict')}}"method= "post">
       <input type ="text" name = "sepal_length"  placeholder = "Sepal Length" required = "required" />
       <input type ="text" name = "sepal_width"  placeholder = "Sepal Width" required = "required" />

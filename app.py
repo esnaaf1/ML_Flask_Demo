@@ -23,7 +23,7 @@ def predict():
 
     prediction_labels = ['Iris-setosa', 'Iris-versicolor', 'Iris-virginica']
     
-    # get the list from the website
+    # get the list of values from the website
     int_features = [float(x) for x in request.form.values()]
     final_features = [np.array(int_features)]
 
