@@ -27,11 +27,15 @@ def predict():
 
     prediction_labels = ['Iris-setosa', 'Iris-versicolor', 'Iris-virginica']
     
-    # get the list of values from the website
+    # get the list of entered values from the website.
+    features = [x for x in request.form.values()]
+
+    # get the list of enterd values from the website and convert them to float
     int_features = [float(x) for x in request.form.values()]
+
+    # Put the list into another list
     final_features = [np.array(int_features)]
 
-    print(final_features)
      
     # **** preprocess the input using the scaler ****"  
     final_features_scaled = scaler.transform(final_features)
@@ -42,7 +46,7 @@ def predict():
    
 
     prediction_text = f'Iris flower type is predicted to be :  {prediction}'
-    return render_template('index.html', prediction_text = prediction_text)
+    return render_template('index.html', prediction_text = prediction_text, features = features)
 
 if __name__ == "__main__":
     app.run(debug=True)
