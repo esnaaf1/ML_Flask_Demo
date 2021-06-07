@@ -8,11 +8,11 @@ This demonstration intended to show how to integrate a Machine Learning Model wi
 ### Please clone this repository to your computer and then do the following:
 
 1. Navigate to the folder that contains ``app.py`` and launch a GitBash (Windows) or  Terminal (Mac).
-2. Type ``source activate PythonML`` and then hit ENTER.
-3. Type ``python app.py`` and then hit ENTER.
-4. Notice that Flask server starts and tells you which port it is running on.  Don't close this window
-5. Enter the following addrress in your Chrome browser:   http://127.0.0.1:5000/
-6. Enter the data for Sepal LEngth, Sepal Width, Petal Length, Petal Width ( note that all the fields are required) and click the Predict button
+1. Type ``source activate PythonData`` and then hit ENTER.
+1. Type ``python app.py`` and then hit ENTER.
+1. Notice that Flask server starts and tells you which port it is running on.  Don't close this window
+1. Enter the following addrress in your Chrome browser:   http://127.0.0.1:5000/
+1. Enter the data for Sepal LEngth, Sepal Width, Petal Length, Petal Width ( note that all the fields are required) and click the Predict button
 Note:  You can enter the following test cases:
     test case 1: 6.7,3.0, 5.2, 2.3
     test case 2: 5.7.2.8, 4.1, 1.3
