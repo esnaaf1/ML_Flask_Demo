@@ -9,7 +9,7 @@ app = Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] =0
 
 # Load the model
-model = joblib.load('model.sav')
+randomforest = load(open('randomforest.pkl', 'rb'))
 
 #load the scaler 
 scaler = load(open('scaler.pkl','rb'))
@@ -41,7 +41,7 @@ def predict():
     final_features_scaled = scaler.transform(final_features)
 
     # make a prediction
-    prediction_encoded = model.predict(final_features_scaled)
+    prediction_encoded = randomforest.predict(final_features_scaled)
     prediction = prediction_labels[prediction_encoded[0]]
    
 

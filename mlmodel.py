@@ -48,20 +48,23 @@ y_train_encoded =label_encoder.transform(y_train)
 # create a random foreset classifier
 
 randomforest = RandomForestClassifier()
-# fit the model
+# fit therandomforest
 randomforest.fit(X_train_scaled, y_train_encoded)
 
-# Save the model to the current directory
-import joblib
-joblib.dump(randomforest, 'model.sav')
+# Save therandomforest using joblib
+# import joblib
+# joblib.dump(randomforest, randomforest.sav')
+
+#save therandomforest using pickle
+dump(randomforest, open('randomforest.pkl', 'wb'))
 
 # save the scaler using pickle
 dump(scaler, open('scaler.pkl', 'wb'))
 
 predict_labels = ['Iris-setosa', 'Iris-versicolor', 'Iris-virginica']
 
-# Load the model
-model = joblib.load("model.sav")
+# Load therandomforest
+randomforest = load(open('randomforest.pkl', 'rb'))
 
 #load the scaler
 scaler = load(open('scaler.pkl', 'rb'))
@@ -78,12 +81,12 @@ input_row2_scaled = scaler.transform(input_row2)
 input_row3_scaled = scaler.transform(input_row3)
 
 # make 3 predictions
-predict = model.predict(input_row1_scaled)
-print(f'Prediction is: {predict_labels[predict[0]]}')
+predict = randomforest.predict(input_row1_scaled)
+print(f'Prediction 1 is: {predict_labels[predict[0]]}')
 
-predict = model.predict(input_row2_scaled)
-print(f'Prediction is: {predict_labels[predict[0]]}')
+predict =randomforest.predict(input_row2_scaled)
+print(f'Prediction 2 is: {predict_labels[predict[0]]}')
 
-predict = model.predict(input_row3_scaled)
-print(f'Prediction is: {predict_labels[predict[0]]}')
+predict =randomforest.predict(input_row3_scaled)
+print(f'Prediction 3 is: {predict_labels[predict[0]]}')
 
