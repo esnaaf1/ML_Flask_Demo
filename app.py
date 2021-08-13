@@ -41,6 +41,7 @@ def predict():
     # (This is how scikit-learn wants the data formatted. We touched on this
     # in class.)
     final_features = [np.array(float_features)]
+    print(final_features)
      
     # Preprocess the input using the ORIGINAL (unpickled) scaler.
     # This scaler was fit to the TRAINING set when we trained the 
